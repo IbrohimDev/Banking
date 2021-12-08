@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.gita.banking.presentation.ui.screens.auth.SplashScreen"
+        android:label="SplashScreen"
+        tools:layout="@layout/screen_splash">
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/navigation"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_pinScreen"
+            app:destination="@id/pinScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="uz.gita.banking.presentation.ui.screens.main.MainScreen"
+        android:label="MainScreen"
+        tools:layout="@layout/screen_main">
+        <action
+            android:id="@+id/action_mainScreen_to_cardsScreen"
+            app:destination="@id/cardsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/pinScreen"
+        android:name="uz.gita.banking.presentation.ui.screens.main.PinScreen"
+        android:label="PinScreen"
+        tools:layout="@layout/screen_pin">
+        <action
+            android:id="@+id/action_pinScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/pinScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/loginScreen">
+        <fragment
+            android:id="@+id/loginScreen"
+            android:name="uz.gita.banking.presentation.ui.screens.auth.LoginScreen"
+            android:label="LoginScreen"
+            tools:layout="@layout/screen_login">
+            <action
+                android:id="@+id/action_loginScreen_to_registerScreen"
+                app:destination="@id/registerScreen" />
+            <action
+                android:id="@+id/action_loginScreen_to_authVerifyScreen"
+                app:destination="@id/authVerifyScreen"
+                app:popUpTo="@id/authVerifyScreen"
+                app:popUpToInclusive="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/registerScreen"
+            android:name="uz.gita.banking.presentation.ui.screens.auth.RegisterScreen"
+            android:label="RegisterScreen"
+            tools:layout="@layout/screen_register" >
+            <action
+                android:id="@+id/action_registerScreen_to_authVerifyScreen"
+                app:destination="@id/authVerifyScreen"
+                app:popUpTo="@id/authVerifyScreen"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/action_registerScreen_to_loginScreen"
+                app:destination="@id/loginScreen" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_pinScreen"
+            app:destination="@id/pinScreen" />
+        <fragment
+            android:id="@+id/authVerifyScreen"
+            android:name="uz.gita.banking.presentation.ui.screens.auth.AuthVerifyScreen"
+            android:label="AuthVerifyScreen"
+            tools:layout="@layout/screen_verify">
+            <action
+                android:id="@+id/action_authVerifyScreen_to_createPinScreen"
+                app:destination="@id/createPinScreen" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_mainScreen"
+            app:destination="@id/mainScreen" />
+        <fragment
+            android:id="@+id/createPinScreen"
+            android:name="uz.gita.banking.presentation.ui.screens.auth.CreatePinScreen"
+            android:label="CreatePinScreen"
+            tools:layout="@layout/screen_create_pin"/>
+    </navigation>
+    <fragment
+        android:id="@+id/cardsScreen"
+        android:name="uz.gita.banking.presentation.ui.screens.main.CardsScreen"
+        android:label="CardsScreen"
+        tools:layout="@layout/screen_cards">
+        <action
+            android:id="@+id/action_cardsScreen_to_addCardScreen2"
+            app:destination="@id/addCardScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCardScreen2"
+        android:name="uz.gita.banking.presentation.ui.screens.main.AddCardScreen"
+        android:label="AddCardScreen"
+        tools:layout="@layout/screen_add_card"/>
+</navigation>

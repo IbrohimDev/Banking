@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/main_menu"
+        android:icon="@drawable/main"
+        android:title="Main" />
+    <item
+        android:id="@+id/transfer_menu"
+        android:icon="@drawable/transfer"
+        android:title="Transfer"
+        />
+    <item
+        android:id="@+id/payment_menu"
+        android:icon="@drawable/payment"
+        android:title="Payment"
+        />
+    <item
+        android:id="@+id/service_menu"
+        android:icon="@drawable/bug"
+        android:title="Services"
+        />
+    <item
+        android:id="@+id/income_outcome_menu"
+        android:icon="@drawable/time"
+        android:title="Income and Outcome"
+        />
+
+
+</menu>

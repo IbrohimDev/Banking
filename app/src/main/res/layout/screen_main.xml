@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/border_guide"
+        android:layout_width="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"
+        android:layout_height="0dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/begin_guide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_menu" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+     <androidx.appcompat.widget.AppCompatImageView
+         android:layout_width="match_parent"
+         android:scaleType="centerCrop"
+         android:foreground="?android:selectableItemBackgroundBorderless"
+         app:layout_constraintBottom_toBottomOf="@id/border_guide"
+         app:layout_constraintTop_toTopOf="parent"
+         android:src="@drawable/back_card"
+         android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/card_item"
+        android:layout_width="50dp"
+        android:src="@drawable/bug"
+        android:padding="10dp"
+        android:foreground="?android:selectableItemBackgroundBorderless"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:background="@drawable/circle_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/border_guide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/go_item"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_height="50dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/go_item"
+        android:layout_width="50dp"
+        android:src="@drawable/go"
+        android:padding="10dp"
+        android:foreground="?android:selectableItemBackgroundBorderless"
+        android:background="@drawable/circle_item"
+        app:layout_constraintEnd_toStartOf="@id/qr_item"
+        app:layout_constraintStart_toEndOf="@id/card_item"
+        app:layout_constraintBottom_toBottomOf="@id/border_guide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_height="50dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/qr_item"
+        android:layout_width="50dp"
+        android:src="@drawable/scan"
+        android:foreground="?android:selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:background="@drawable/circle_item"
+        app:layout_constraintStart_toEndOf="@id/go_item"
+        app:layout_constraintBottom_toBottomOf="@id/border_guide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_height="50dp"/>
+
+     <TextView
+         app:layout_constraintStart_toStartOf="@id/card_item"
+         app:layout_constraintEnd_toEndOf="@id/card_item"
+         app:layout_constraintBottom_toBottomOf="@id/border_guide"
+         app:layout_constraintTop_toBottomOf="@id/card_item"
+         android:text="Cards"
+         android:textColor="@color/white"
+         style="@style/TextAppearance.AppCompat.Caption"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintStart_toStartOf="@id/go_item"
+        app:layout_constraintEnd_toEndOf="@id/go_item"
+        app:layout_constraintBottom_toBottomOf="@id/border_guide"
+        app:layout_constraintTop_toBottomOf="@id/go_item"
+        android:text="Go"
+        android:textColor="@color/white"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        app:layout_constraintStart_toStartOf="@id/qr_item"
+        app:layout_constraintEnd_toEndOf="@id/qr_item"
+        app:layout_constraintBottom_toBottomOf="@id/border_guide"
+        app:layout_constraintTop_toBottomOf="@id/qr_item"
+        android:text="Scan payment"
+        android:textColor="@color/white"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

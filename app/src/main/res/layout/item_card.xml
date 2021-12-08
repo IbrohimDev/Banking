@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/visa">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/border_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/begin_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+
+    <TextView
+        android:id="@+id/title_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Western"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/money_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#FFFFFF"
+        android:singleLine="true"
+
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/title_card"
+        app:layout_constraintEnd_toStartOf="@id/border_guideline"
+        app:layout_constraintHorizontal_bias="0"
+
+        app:layout_constraintStart_toStartOf="@id/begin_guideline"
+        tools:text="20000" />
+
+    <TextView
+        android:id="@+id/textBalance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/number_card"
+        app:layout_constraintTop_toBottomOf="@id/title_card" />
+
+    <TextView
+        android:id="@+id/number_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@id/border_guideline"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline"
+        app:layout_constraintTop_toBottomOf="@id/textBalance"
+        tools:text="8600  1402  1111  3355" />
+
+    <TextView
+        android:id="@+id/expire_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number_card"
+        tools:text="month/year" />
+
+    <TextView
+        android:id="@+id/owner_name_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline"
+        app:layout_constraintEnd_toEndOf="@id/border_guideline"
+        app:layout_constraintTop_toBottomOf="@id/expire_card"
+        tools:text="Sulaymanov Ibrohim Bahodir o'g'li" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

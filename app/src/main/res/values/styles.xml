@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Banking.WhiteAccent">
+        <item name="colorAccent">@color/fire</item>
+    </style>
+</resources>

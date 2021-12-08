@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline_out"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/begin_guideline_out"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_visual"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/visa"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline_out"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+        app:layout_constraintTop_toBottomOf="@id/backAdd_btn">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/border_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/begin_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+
+        <TextView
+            android:id="@+id/title_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            tools:text="Western"
+            android:textColor="#FFFFFF"
+            android:maxLength="20"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/money_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/title_card"
+            app:layout_constraintEnd_toStartOf="@id/border_guideline"
+            app:layout_constraintHorizontal_bias="0"
+
+            app:layout_constraintStart_toStartOf="@id/begin_guideline"
+            tools:text="20000" />
+
+        <TextView
+            android:id="@+id/textBalance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="@id/number_card"
+            app:layout_constraintTop_toBottomOf="@id/title_card" />
+
+        <TextView
+            android:id="@+id/number_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/border_guideline"
+            app:layout_constraintStart_toStartOf="@id/begin_guideline"
+            app:layout_constraintTop_toBottomOf="@id/textBalance"
+            tools:text="8600  1402  1111  3355" />
+
+        <TextView
+            android:id="@+id/expire_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number_card"
+            tools:text="month/year" />
+
+        <TextView
+            android:id="@+id/owner_name_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/border_guideline"
+            app:layout_constraintStart_toStartOf="@id/begin_guideline"
+            app:layout_constraintTop_toBottomOf="@id/expire_card"
+            tools:text="Sulaymanov Ibrohim Bahodir o'g'li" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/card_number_layout"
+        android:layout_width="0dp"
+        android:hint="Card Number"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintBottom_toTopOf="@id/add_card_btn"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline_out"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+        app:layout_constraintTop_toBottomOf="@id/card_visual"
+        app:layout_constraintVertical_bias="0.03"
+        android:layout_height="wrap_content">
+        <br.com.sapereaude.maskedEditText.MaskedEditText
+            android:id="@+id/card_number_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@id/add_card_btn"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline_out"
+            app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+            app:layout_constraintTop_toBottomOf="@id/card_visual"
+            app:layout_constraintVertical_bias="0.03"
+            app:mask="#### #### #### ####" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/expire_date_layout"
+        android:layout_width="0dp"
+        android:hint="Expire Date"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintBottom_toTopOf="@id/add_card_btn"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline_out"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+        app:layout_constraintTop_toBottomOf="@id/card_number_layout"
+        app:layout_constraintVertical_bias="0.03"
+        android:layout_height="wrap_content">
+        <br.com.sapereaude.maskedEditText.MaskedEditText
+            android:id="@+id/expire_date_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@id/add_card_btn"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline_out"
+            app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+            app:layout_constraintTop_toBottomOf="@id/card_visual"
+            app:layout_constraintVertical_bias="0.03"
+            app:mask="##/##" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/card_name_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Card Name"
+        app:counterMaxLength="16"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline_out"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+        app:layout_constraintTop_toBottomOf="@id/expire_date_layout"
+        app:layout_constraintVertical_bias="0.02">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/card_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_card_btn"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_draw"
+        android:text="Ready"
+        android:textColor="@color/white"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline_out"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+        app:layout_constraintTop_toBottomOf="@id/card_name_layout"
+        app:layout_constraintVertical_bias="0.93" />
+
+    <ImageView
+        android:id="@+id/backAdd_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Card"
+        app:layout_constraintBottom_toBottomOf="@id/backAdd_btn"
+        app:layout_constraintEnd_toEndOf="@id/end_guideline_out"
+        app:layout_constraintStart_toStartOf="@id/begin_guideline_out"
+        app:layout_constraintTop_toTopOf="@id/backAdd_btn" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:theme="@style/Theme.Banking.WhiteAccent"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
